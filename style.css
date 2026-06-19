@@ -1,3 +1,4 @@
+/* import primary font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* CSS reset */
@@ -30,8 +31,115 @@
   --font-family: "Poppins", Arial, sans-serif;
   --text-preset-1: 600 1.5rem/1.4 var(--font-family);
   --text-preset-2: 200 1.5rem/1.4 var(--font-family);
-  --text-preset-3: 400 1.25rem/1.35 var(--font-family);
+  --text-preset-3: 600 1.25rem/1.35 var(--font-family);
   --text-preset-4: 400 0.94rem/1.4 var(--font-family);
   --text-preset-5: 400 0.81rem/1.6 var(--font-family);
   --letter-spacing: 0.25px;
+  /* visuals */
+  --border-radius: 0.5rem;
+  --box-shadow: 10px 10px 15px hsla(0, 0%, 0%, 0.2);
 }
+
+body {
+  font: var(--text-preset-3);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 0;
+  background-color: var(--clr-white);
+}
+
+main {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+
+h1 {
+  font: var(--text-preset-1);
+  letter-spacing: var(--letter-spacing);
+  color: var(--clr-grey-500);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: center;
+}
+
+.title-light {
+  font: var(--text-preset-2);
+}
+
+.hero-text {
+  font: var(--text-preset-4);
+  color: var(--clr-grey-500);
+}
+
+.card-container {
+  width: 100%;
+  height: 300px;
+  display: grid;
+  gap: var(--spacing-400);
+}
+
+.card {
+  padding: var(--spacing-400);
+  background-color: var(--clr-white);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: space-between;
+  box-shadow: var(--box-shadow);
+  height: 15.625rem;
+}
+
+.card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  overflow: clip;
+}
+
+.card-red.card::before {
+  background-color: var(--clr-red);
+}
+
+.card-cyan.card::before {
+  background-color: var(--clr-cyan);
+}
+
+.card-orange.card::before {
+  background-color: var(--clr-orange);
+}
+
+.card-blue.card::before {
+  background-color: var(--clr-blue);
+}
+
+.text-box {
+  text-align: left;
+}
+
+.img-box {
+  align-self: flex-end;
+}
+
+.card-title {
+  font: var(--text-preset-3);
+  color: var(--clr-grey-500);
+}
+
+.card-text {
+  font: var(--text-preset-5);
+  color: var(--clr-grey-400);
+}
+
