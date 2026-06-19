@@ -44,6 +44,7 @@ body {
   font: var(--text-preset-3);
   text-align: center;
   display: flex;
+  min-height: 100vh;
   justify-content: center;
   padding: 3.5rem 0;
   background-color: var(--clr-white);
@@ -143,3 +144,52 @@ h1 {
   color: var(--clr-grey-400);
 }
 
+@media screen and (min-width: 768px) {
+  body {
+    padding: 5rem 0;
+  }
+
+  main {
+    gap: 4.625rem;
+  }
+
+  .hero {
+    max-width: 33rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--spacing-400);
+    grid-template-areas: 
+    "a b c"
+    ". d ."
+    ;
+  }
+
+  .card-blue {
+    grid-area: c;
+    position: relative;
+    top: 50%;
+  }
+
+  .card-red {
+    grid-area: b;
+  }
+
+  .card-cyan {
+    grid-area: a;
+    position: relative;
+    top: 50%;
+  }
+
+  .card-orange {
+    grid-area: d;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    max-width: 75vw;
+  }
+}
